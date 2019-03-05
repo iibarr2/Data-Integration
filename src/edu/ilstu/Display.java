@@ -3,6 +3,7 @@
  */
 package edu.ilstu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -77,11 +78,34 @@ public class Display
 	 * print the number of rows read
 	 * user enters "A"
 	 */
+	
+	String[] fileNames = new String[3];
+	int numFiles = 0;
+	ArrayList<String> addedFiles = new ArrayList<String>();
+	boolean added = false;
+	boolean repeat = false;
+	InputOutput inFile = new InputOutput();
+	public Scanner input = new Scanner(System.in);
+	
+	
 	public void addData()
 	{
-		String filename = "";
+		String fileName = "";
 		String file;
 		boolean num = true;
+		
+		/*
+		 * while loop to execute the adding of the file
+		 */
+		while(num)
+		{
+			System.out.println("\nrelationships.csv"
+					+ "\nrelationships2.csv\n"
+					+ "relationships3.csv\n"
+					+ "\nEnter filename from above: ");
+			
+			fileName = input.nextLine();
+		}
 		
 		
 		
