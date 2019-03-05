@@ -105,6 +105,14 @@ public class Display
 					+ "\nEnter filename from above: ");
 			
 			fileName = input.nextLine();
+			if(fileName.equals("relationships.csv")||fileName.equals("relationships2.csv")||fileName.equals("relationship3.csv"))
+			{
+				System.out.println("\nFile has been found");
+			}
+			else
+			{
+				System.out.println("Invalid filename, enter again.");
+			}
 		}
 		
 		
