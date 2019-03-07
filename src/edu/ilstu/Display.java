@@ -12,14 +12,11 @@ import java.util.Scanner;
  */
 public class Display 
 {
+	InputOutput io = new InputOutput();
+	
 	public void printDisplay()
 	{
 		Scanner userInput = new Scanner(System.in);
-	
-		InputOutput io = new InputOutput();
-	
-	
-	
 	
 		/*
 		 * prompt user for input and displays menu
@@ -80,18 +77,17 @@ public class Display
 	 */
 	
 	String[] fileNames = new String[3];
-	int numFiles = 0;
-	ArrayList<String> addedFiles = new ArrayList<String>();
-	boolean added = false;
-	boolean repeat = false;
-	InputOutput inFile = new InputOutput();
+//	int numFiles = 0;
+//	ArrayList<String> addedFiles = new ArrayList<String>();
+//	boolean added = false;
+//	boolean repeat = false;
+//	InputOutput inFile = new InputOutput();
 	public Scanner input = new Scanner(System.in);
 	
 	
 	public void addData()
 	{
 		String fileName = "";
-		String file;
 		boolean num = true;
 		
 		/*
@@ -113,7 +109,39 @@ public class Display
 			{
 				System.out.println("Invalid filename, enter again.");
 			}
+				
 		}
+		
+//		for(int i = 0; i< addedFiles.size(); i++)
+//		{
+//			if(addedFiles.equals(fileName))
+//			{
+//				repeat = true;
+//			}
+//		}
+//		
+//		/*
+//		 * check to make sure the file isn't being processed again
+//		 */
+//		if(repeat)
+//		{
+//			System.out.println("File has already been processed");
+//			/*
+//			 * loop back to display the menu
+//			 */
+//			printDisplay();
+//		}
+//		else if(fileName.equals("relationships"))
+//		{
+//			added = true;
+//			addedFiles.add(fileName);
+//			
+//			fileNames[numFiles] = fileName;
+//			numFiles++;
+//			printDisplay();
+//		}
+		
+		
 		
 		
 		
