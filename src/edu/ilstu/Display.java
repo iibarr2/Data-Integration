@@ -3,6 +3,8 @@
  */
 package edu.ilstu;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,7 +19,7 @@ public class Display
 		Scanner userInput = new Scanner(System.in);
 	
 		InputOutput io = new InputOutput();
-	
+		
 	
 	
 	
@@ -39,31 +41,37 @@ public class Display
 			 * grab the userinput and call methods for what they chose
 			 * from the above
 			 */
-			String choice = userInput.nextLine();
-			choice = choice.toUpperCase();
+			
 			
 			/*
 			 * start switch case statements
 			 */
-			switch(choice)
-			{
-			case "A":
-				addData();
+			char choice = userInput.nextLine().charAt(0);
+
+			switch(choice) {
+				
+			case 'A':
+			case 'a':
+				System.out.println("Please enter file name: ");
+				getFileInfo(userInput.nextLine());
 				break;
-			case "R":
-				//saveDataRelationShip();
+			
+			case 'R':
+			case 'r':
+				
 				break;
-			case "T":
-				//saveDataMedical();
+				
+			case 'T':
+			case 't':
+				
 				break;
-			case "E":
-				System.out.println("\nQuitting Application.");
-				System.exit(0);
+				
+			case 'E':
+			case 'e':
+				
 				break;
-			default:
-				System.out.println("Invalid choise, please try again.");
-				num = false;			
-			}//end of switch
+			
+			}
 							
 		}
 		//userInput.close();
@@ -79,44 +87,48 @@ public class Display
 	 * user enters "A"
 	 */
 	
-	String[] fileNames = new String[3];
-	int numFiles = 0;
-	ArrayList<String> addedFiles = new ArrayList<String>();
-	boolean added = false;
-	boolean repeat = false;
-	InputOutput inFile = new InputOutput();
-	public Scanner input = new Scanner(System.in);
+	String[][] firstDataIn = new String[150][3];
+	int firstDataInSize = 0;
+	boolean isThereAFile = false;
 	
-	
-	public void addData()
-	{
-		String fileName = "";
-		String file;
-		boolean num = true;
+public  void getFileInfo(String fileName1) {
 		
-		/*
-		 * while loop to execute the adding of the file
-		 */
-		while(num)
-		{
-			System.out.println("\nrelationships.csv"
-					+ "\nrelationships2.csv\n"
-					+ "relationships3.csv\n"
-					+ "\nEnter filename from above: ");
-			
-			fileName = input.nextLine();
-			if(fileName.equals("relationships.csv")||fileName.equals("relationships2.csv")||fileName.equals("relationship3.csv"))
-			{
-				System.out.println("\nFile has been found");
-			}
-			else
-			{
-				System.out.println("Invalid filename, enter again.");
-			}
+		File file = new File(fileName1);
+		
+		try {
+		    Scanner scanner = new Scanner(file);
+
+		    //now read the file line by line...
+		    
+		    int rowNum = 0;
+		    int colNum = 0;
+		    scanner.nextLine() ;
+		    while (scanner.hasNextLine()) {
+		        String line = scanner.nextLine();
+		        
+		        if(line.isEmpty()) {
+		        	continue;
+		        }
+		        String[] arrOfStr = line.split(","); 
+		        for (String element : arrOfStr) {
+		        	
+		        	firstDataIn[rowNum][colNum] = element;
+		        	colNum++;
+		            System.out.println(element);
+		        }
+		        if(colNum == 3) {
+		        	colNum = 0;
+		        }
+		        
+		        rowNum++;
+		        firstDataInSize++;
+		        
+		     
+		    }
+		} catch(FileNotFoundException e) { 
+		    System.out.println("No file found");
 		}
-		
-		
-		
+		System.out.println(firstDataInSize);
 	}
 	
 	/*
