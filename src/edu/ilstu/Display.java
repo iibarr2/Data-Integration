@@ -3,7 +3,11 @@
  */
 package edu.ilstu;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -51,7 +55,7 @@ public class Display
 				//saveDataRelationShip();
 				break;
 			case "T":
-				//saveDataMedical();
+				saveDataMedical();
 				break;
 			case "E":
 				System.out.println("\nQuitting Application.");
@@ -170,6 +174,43 @@ public class Display
 	public void saveDataMedical()
 	{
 		
+		String term = null;
+		String termCode = null;
+		String line = null;
+        int lineNum = 0;
+		
+		System.out.println("enter medical term");
+		term = input.nextLine();
+
+        File file= new File("terms.csv");
+        BufferedReader br = null;
+		try
+		{
+			br = new BufferedReader(new FileReader(file));
+			while ((line = br.readLine()) != null) 
+			{
+				// use comma as separator
+				String[] cols = line.split(",");
+				if(cols[1].equalsIgnoreCase(term))
+				{
+					System.out.println(cols[0]);
+					termCode = cols[0];
+				}
+			}
+		}
+		catch (FileNotFoundException e)
+		{
+			System.out.println("file not found");
+		}
+		catch (IOException e)
+		{
+			System.out.print("failure to read");
+		}
+       
+		
 	}
+        
 
 }
+
+
