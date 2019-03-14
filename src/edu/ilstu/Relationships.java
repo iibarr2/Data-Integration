@@ -14,13 +14,11 @@ package edu.ilstu;
  */
 public class Relationships 
 {
-	private final static int ARRAY_SIZE = 104;
-	private int size;
 	
 	/*
 	 * variables
 	 */
-	Terms CUI;
+	String CUI;
 	String CUI2;
 	//String CUI;
 	String relation;
@@ -29,7 +27,7 @@ public class Relationships
 	/*
 	 * creates relationships array
 	 */
-	public Relationships(Terms CUI, String relation, String CUI2)
+	public Relationships(String CUI, String relation, String CUI2)
 	{
 		super();
 		this.CUI = CUI;
@@ -54,11 +52,11 @@ public class Relationships
 		return relation;
 	}
 
-	public Terms getCUI() {
+	public String getCUI() {
 		return CUI;
 	}
 
-	public void setCUI(Terms CUI) {
+	public void setCUI(String CUI) {
 		this.CUI = CUI;
 	}
 

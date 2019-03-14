@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -81,23 +82,25 @@ public class Display
 	 */
 	
 	String[] fileNames = new String[3];
-//	int numFiles = 0;
-//	ArrayList<String> addedFiles = new ArrayList<String>();
-//	boolean added = false;
-//	boolean repeat = false;
-//	InputOutput inFile = new InputOutput();
+	int numFiles = 0;
+	ArrayList<String> addedFiles = new ArrayList<String>();
+	boolean added = false;
+	boolean repeat = false;
+	InputOutput inFile = new InputOutput();
 	public Scanner input = new Scanner(System.in);
 	
 	
 	public void addData()
 	{
 		String fileName = "";
-		boolean num = true;
+		String file = "";
+		boolean isTrue = true;
+		int period = 0;
 		
 		/*
 		 * while loop to execute the adding of the file
 		 */
-		while(num)
+		while(isTrue)
 		{
 			System.out.println("\nrelationships.csv"
 					+ "\nrelationships2.csv\n"
@@ -105,51 +108,52 @@ public class Display
 					+ "\nEnter filename from above: ");
 			
 			fileName = input.nextLine();
-			if(fileName.equals("relationships.csv")||fileName.equals("relationships2.csv")||fileName.equals("relationship3.csv"))
+			if(fileName.equals("relationships.csv")||fileName.equals("relationships2.csv")||fileName.equals("relationships3.csv"))
 			{
 				System.out.println("\nFile has been found");
+				for(int i = 0; i<fileName.length();i++)
+				{
+					period = fileName.indexOf('.');
+				}
+				file = fileName.substring(0, period);
+				isTrue = false;
 			}
-			else
-			{
+			else{
 				System.out.println("Invalid filename, enter again.");
 			}
 				
 		}
 		
-//		for(int i = 0; i< addedFiles.size(); i++)
-//		{
-//			if(addedFiles.equals(fileName))
-//			{
-//				repeat = true;
-//			}
-//		}
-//		
-//		/*
-//		 * check to make sure the file isn't being processed again
-//		 */
-//		if(repeat)
-//		{
-//			System.out.println("File has already been processed");
-//			/*
-//			 * loop back to display the menu
-//			 */
-//			printDisplay();
-//		}
-//		else if(fileName.equals("relationships"))
-//		{
-//			added = true;
-//			addedFiles.add(fileName);
-//			
-//			fileNames[numFiles] = fileName;
-//			numFiles++;
-//			printDisplay();
-//		}
+		for(int i = 0; i< addedFiles.size(); i++)
+		{
+			if(addedFiles.equals(fileName))
+				repeat = true;
+		}
 		
-		
-		
-		
-		
-	}
+		/*
+		 * check to make sure the file isn't being processed again
+		 */
+		if(repeat)
+		{
+			System.out.println("File has already been processed");
+			/*
+			 * loop back to display the menu
+			 */
+			printDisplay();
+		}
+		else 
+		{
+			boolean result = inFile.readRelations(fileName, file);
+			if(result)
+			{
+				added = true;
+				addedFiles.add(fileName);
+			}
+			fileNames[numFiles] = fileName;
+			numFiles++;
+			printDisplay();
+		}		
+	}// end of addData()
 	
 	/*
 	 * user inputs a RELA
