@@ -5,7 +5,7 @@ package edu.ilstu;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -17,11 +17,12 @@ public class Display {
 		Scanner userInput = new Scanner(System.in);
 
 		InputOutput io = new InputOutput();
-
+		String[] alreadyIn = new String[50];
 		/*
 		 * prompt user for input and displays menu upon selecting an option
 		 */
 		boolean num = false;
+		int already = 0;
 		while (!num) {
 			System.out.print("\nBiomedical Concepts Data" + "\n('A' or 'a') Add Data\n"
 					+ "('R' or 'r') Save data for a relationship\n" + "('T' or 't') Save data for medical terms\n"
@@ -41,7 +42,17 @@ public class Display {
 			case 'A':
 			case 'a':
 				System.out.println("Please enter file name: ");
-				getFileInfo(userInput.nextLine());
+				
+				String userIn = userInput.nextLine();
+				
+				if(Arrays.stream(alreadyIn).anyMatch(userIn::equals)) {
+					
+					System.out.println("File already read, please try a new file...");
+					continue;
+				}
+				alreadyIn[already] = userIn;
+				getFileInfo(userIn);
+				already++;
 				break;
 
 			case 'R':
@@ -56,8 +67,8 @@ public class Display {
 
 			case 'E':
 			case 'e':
-				num = false;
-				for(int j = 0; j < firstDataInSize; j++) {
+				num = true;
+				for(int j = 0; j < dataSize; j++) {
 					for(int k = 0; k < 3 ;k++) {
 						System.out.print(firstDataIn[j][k] + ", ");
 					}
@@ -79,7 +90,7 @@ public class Display {
 	 */
 
 	String[][] firstDataIn = new String[150][3];
-	int firstDataInSize = 0;
+	int dataSize = 0;
 	boolean isThereAFile = false;
 
 	public void getFileInfo(String fileName1) {
@@ -97,7 +108,8 @@ public class Display {
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 
-				if (line.isEmpty()) {
+				if (line.contains(",,")) {
+					System.out.println("------------------------------");
 					continue;
 				}
 				String[] arrOfStr = line.split(",");
@@ -112,13 +124,13 @@ public class Display {
 				}
 
 				rowNum++;
-				firstDataInSize++;
+				dataSize++;
 
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("No file found");
 		}
-		System.out.println(firstDataInSize);
+		System.out.println("num rows read: " + dataSize);
 	}
 
 	/*
@@ -127,7 +139,7 @@ public class Display {
 	 * file with string() format user enters "R"
 	 */
 	public void saveDataRelation() {
-
+			
 	}
 
 	/*
