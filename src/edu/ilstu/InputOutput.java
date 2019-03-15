@@ -297,7 +297,7 @@ public class InputOutput
 	
 	/*
 	 * modified readRelationships to create a repository
-	 * of type array for the terms and pass boolean to addData() 
+	 * of type arrayList for the terms and pass boolean to addData() 
 	 * to keep track of count of the times the
 	 * file has been read in
 	 */

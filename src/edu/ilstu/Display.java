@@ -152,8 +152,8 @@ public class Display
 			fileNames[numFiles] = fileName;
 			numFiles++;
 			printDisplay();
-		}		
-	}// end of addData()
+		}
+	}
 	
 	/*
 	 * user inputs a RELA
