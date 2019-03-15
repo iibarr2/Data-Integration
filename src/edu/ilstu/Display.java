@@ -153,7 +153,7 @@ public class Display
 			numFiles++;
 			printDisplay();
 		}
-	}
+	}//end of addData()
 	
 	/*
 	 * user inputs a RELA
