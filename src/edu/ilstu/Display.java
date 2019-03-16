@@ -63,7 +63,7 @@ public class Display
 				System.exit(0);
 				break;
 			default:
-				System.out.println("Invalid choise, please try again.");
+				System.out.println("Invalid choice, please try again.");
 				num = false;			
 			}//end of switch
 							
@@ -126,8 +126,14 @@ public class Display
 		
 		for(int i = 0; i< addedFiles.size(); i++)
 		{
-			if(addedFiles.equals(fileName))
+			if(addedFiles.contains(fileName))
+			{
 				repeat = true;
+			}
+			else
+			{
+				repeat = false;
+			}
 		}
 		
 		/*
