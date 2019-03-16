@@ -70,30 +70,18 @@ public class Display {
 
 			case 'T':
 			case 't':
-
+				System.out.println("Please enter the term you want to save: ");
+				String userIn2 = userInput.nextLine();
+				System.out.println("Please enter the file name you want to create or save it: ");
+				String fileName1 = userInput.nextLine();
+				saveTerms(userIn2, fileName1);
+				
 				break;
 
 			case 'E':
 			case 'e':
 				num = true;
-				for(int j = 0; j < dataSize; j++) {
-					for(int k = 0; k < 3 ;k++) {
-						System.out.println("["+dataIn[j][k] + "]");
-					}
-					System.out.println();
-				}
-				for(int j = 0; j < termsDataSize; j++) {
-					for(int k = 0; k < 2 ;k++) {
-						System.out.println("["+termsData[j][k] + "]");
-					}
-					System.out.println();
-				}
-				for(int q = 0; q < str2Size; q++) {
-					for(int z = 0; z < 2 ;z++) {
-						System.out.println("["+str2Data[q][z] + "]");
-					}
-					System.out.println();
-				}
+				System.out.println("Program has ended.");
 				break;
 
 			}
@@ -289,8 +277,78 @@ public class Display {
 	 * exported/saved find all the information from the repository with medical term
 	 * and export it with specific string() format user enters "T"
 	 */
-	public void saveDataMedical() {
+	public void saveTerms(String relaStr, String fileName) {
 
+		
+		File newFile = new File(fileName);
+		try {
+			PrintWriter pw = new PrintWriter(fileName+".csv");
+			
+			StringBuilder sb = new StringBuilder();
+			
+			for(int e = 0; e < termsDataSize; e++) {
+				
+				if(termsData[e][1].toString().equals(relaStr)){
+				relaStr = termsData[e][0];
+				
+				}
+			}
+			
+			sb.append("STR");
+			sb.append(",");
+			sb.append("Relationship");
+			sb.append(",");
+			sb.append("STR2");
+			sb.append("\n");
+			
+			for(int i = 0; i < dataSize; i++) {
+				
+				
+					try {
+						if(dataIn[i][0].toString().equals(relaStr) || dataIn[i][2].toString().equals(relaStr)) {
+							
+							for(int e = 0; e < termsDataSize; e++) {
+								
+								if(dataIn[i][0].toString().equals(termsData[e][0].toString())){
+								sb.append(termsData[e][1].toString());
+								
+								}
+							}
+								sb.append(",");
+								
+								
+								sb.append(termsData[i][1].toString());
+									
+								
+								sb.append(",");
+								for(int e = 0; e < str2Size; e++) {
+									
+								if(dataIn[i][1+1].toString().equals(str2Data[e][0].toString())){
+										sb.append(str2Data[e][1].toString());
+									}
+								
+								}
+								sb.append("\n");
+								
+							
+								
+								
+							}
+						
+						
+			        } catch (NullPointerException e) {
+			            System.out.print("Caught the NullPointerException");
+			        }
+					
+				
+			}
+			pw.write(sb.toString());
+			pw.close();
+			System.out.println("finished");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
