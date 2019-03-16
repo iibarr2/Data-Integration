@@ -144,7 +144,7 @@ public class Display {
 					 }
 					dataIn[rowNum][colNum] = element;
 					colNum++;
-					System.out.println(element);
+					//System.out.println(element);
 					
 				}
 				if(colNum == 4) {
@@ -160,9 +160,9 @@ public class Display {
 			System.out.println("No file found");
 		}
 		System.out.println("num rows read: " + dataSize);
-	}
+		
 
-	
+	}
 	
 	public void readTermsData() {
 		File file = new File("Terms.csv");
@@ -278,7 +278,7 @@ public class Display {
 	 * and export it with specific string() format user enters "T"
 	 */
 	public void saveTerms(String relaStr, String fileName) {
-
+		String cuiCode = null;
 		
 		File newFile = new File(fileName);
 		try {
@@ -288,11 +288,15 @@ public class Display {
 			
 			for(int e = 0; e < termsDataSize; e++) {
 				
-				if(termsData[e][1].toString().equals(relaStr)){
-				relaStr = termsData[e][0];
+				if(termsData[e][1].toString().equalsIgnoreCase(relaStr)){
+				cuiCode = termsData[e][0];
 				
 				}
 			}
+			
+			//I'm just using this to make sure its grabbing the right code for the term.
+			//can be deleted before submission
+			System.out.println(relaStr + "    " + cuiCode);
 			
 			sb.append("STR");
 			sb.append(",");
@@ -301,44 +305,31 @@ public class Display {
 			sb.append("STR2");
 			sb.append("\n");
 			
-			for(int i = 0; i < dataSize; i++) {
-				
-				
-					try {
-						if(dataIn[i][0].toString().equals(relaStr) || dataIn[i][2].toString().equals(relaStr)) {
+			
+			/*
+			 * so from what i can tell, the dataIn array holds a cui code matching a 
+			 * term and a relationship and the str2data array holds the code and the second part of the relationship
+			 * the following should grab the right relation ship for the term,
+			 * then add the term, then the relationship, and then the corresponding string from str2.
+			 */
+			for(int i = 0; i < dataIn.length; i++) 
+			{
+				try {
+					if(dataIn[i][0].toString().equalsIgnoreCase(cuiCode) ) {
 							
-							for(int e = 0; e < termsDataSize; e++) {
-								
-								if(dataIn[i][0].toString().equals(termsData[e][0].toString())){
-								sb.append(termsData[e][1].toString());
-								
-								}
-							}
-								sb.append(",");
-								
-								
-								sb.append(termsData[i][1].toString());
-									
-								
-								sb.append(",");
-								for(int e = 0; e < str2Size; e++) {
-									
-								if(dataIn[i][1+1].toString().equals(str2Data[e][0].toString())){
-										sb.append(str2Data[e][1].toString());
-									}
-								
-								}
-								sb.append("\n");
-								
+						sb.append(relaStr);
+						sb.append(",");
+						sb.append(dataIn[i][1]);
+						sb.append(",");
+						sb.append(str2Data[i][1]);
+						sb.append("\n");
 							
-								
-								
-							}
+						}
 						
 						
-			        } catch (NullPointerException e) {
-			            System.out.print("Caught the NullPointerException");
-			        }
+			       } catch (NullPointerException e) {
+			           System.out.print("Caught the NullPointerException");
+			       }
 					
 				
 			}
