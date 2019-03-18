@@ -277,7 +277,7 @@ public class Display {
 	 * exported/saved find all the information from the repository with medical term
 	 * and export it with specific string() format user enters "T"
 	 */
-	public void saveTerms(String relaStr, String fileName) {
+		public void saveTerms(String relaStr, String fileName) {
 		String cuiCode = null;
 		
 		File newFile = new File(fileName);
@@ -296,7 +296,7 @@ public class Display {
 			
 			//I'm just using this to make sure its grabbing the right code for the term.
 			//can be deleted before submission
-			System.out.println(relaStr + "    " + cuiCode);
+			//System.out.println(relaStr + "    " + cuiCode);
 			
 			sb.append("STR");
 			sb.append(",");
@@ -314,6 +314,10 @@ public class Display {
 			 */
 			for(int i = 0; i < dataIn.length; i++) 
 			{
+				
+				//used the print line to see if that dataIn array is updated when a new file is added
+				//it is but the new data replaces the old.
+				//System.out.println("dataIn: " + dataIn[i][1]);
 				try {
 					if(dataIn[i][0].toString().equalsIgnoreCase(cuiCode) ) {
 							
@@ -328,7 +332,9 @@ public class Display {
 						
 						
 			       } catch (NullPointerException e) {
-			           System.out.print("Caught the NullPointerException");
+			           //commented this out because it prints every time there isnt 
+			    	   //the code at that point in the array.
+			    	   // System.out.print("Caught the NullPointerException");
 			       }
 					
 				
