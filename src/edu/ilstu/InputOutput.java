@@ -24,6 +24,7 @@ public class InputOutput
 	String CUI;
 	String relationship;
 	String CUI2;
+	String STR2;
 	ArrayList<Relationships> relationships = new ArrayList<Relationships>();
 	//ArrayList<Terms> terms = new ArrayList<Terms>();
 	
@@ -36,7 +37,7 @@ public class InputOutput
 	{
 		try 
 		{
-			System.out.println("Number of lines terms in repository: " + relationships.size());
+			System.out.println("Number of lines in repository: " + relationships.size());
 			scanner = new Scanner(new File(fileName));
 			
 			int count = 0;
@@ -85,8 +86,16 @@ public class InputOutput
 				{
 					CUI2 = "";
 				}
+				if(headerBreak[count].contains("STR2"))
+				{
+					STR2 = (data[count]);
+				}
+				else
+				{
+					STR2 = "";
+				}
 				
-				Relationships relation = new Relationships(CUI,relationship,CUI2);
+				Relationships relation = new Relationships(CUI,relationship,CUI2,STR2);
 				relationships.add(relation);
 				count = -1;
 				relationNum++;

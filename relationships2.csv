@@ -1,38 +1,38 @@
-CUI,RELA,CUI2
-C0002871,may_be_associated_disease_of_disease,C0856024
-,,
-C0002871,is_associated_disease_of,C2347748
-,,
-C0006277,manifestation_of,C2750790
-C0006277,may_be_treated_by,C2947911
-C0023418,disease_has_associated_gene,C1334518
-C0024299,manifestation_of,C0265325
-,,
-C0024299,human_disease_maps_to_eo_disease,C1511342
-C0003864,related_to,C0022408
-C0003864,disease_has_associated_anatomic_site,C1516798
-C0007789,may_be_treated_by,C0687971
-C0007789,disease_has_associated_anatomic_site,C0027763
-C0020676,manifestation_of,C3494506
-C0020676,disease_has_primary_anatomic_site,C0040132
-C0029456,manifestation_of,C1850168
-C0029456,may_be_prevented_by,C0975148
-C0029456,disease_has_associated_anatomic_site,C0262950
-,,
-,,
-,,
-,,
-C0024530,related_to,C1456578
-C0024530,may_be_prevented_by,C1177631
-,,
-,,
-,,
-C0024530,may_be_prevented_by,C1177631
-C0024530,answer_to,C2706779
-C0018790,component_of,C2925643
-C0018790,manifestation_of,C3554047
-C0018790,may_be_treated_by,C3486191
-C0032285,may_be_treated_by,C0980385
-,,
-C0015967,may_be_finding_of_disease,C0855628
-C0015967,manifestation_of,C2749604
+CUI,RELA,CUI2,STR2
+C0002871,may_be_associated_disease_of_disease,C0856024,Stage I Splenic Marginal Zone Lymphoma
+,,,
+C0002871,is_associated_disease_of,C2347748,Adult Erythroleukemia
+,,,
+C0006277,manifestation_of,C2750790,CILIARY DYSKINESIA  PRIMARY  13
+C0006277,may_be_treated_by,C2947911,Cefixime 100 MG Chewable Tablet
+C0023418,disease_has_associated_gene,C1334518,FOXO4 gene
+C0024299,manifestation_of,C0265325,Turcot syndrome (disorder)
+,,,
+C0024299,human_disease_maps_to_eo_disease,C1511342,Burkitt-like Lymphoma of the Mouse Hematologic System
+C0003864,related_to,C0022408,Arthropathy
+C0003864,disease_has_associated_anatomic_site,C1516798,Connective and Soft Tissue
+C0007789,may_be_treated_by,C0687971,Baclofen 10 MG Oral Tablet
+C0007789,disease_has_associated_anatomic_site,C0027763,Nervous system structure
+C0020676,manifestation_of,C3494506,Pseudohypoparathyroidism  Type Ia
+C0020676,disease_has_primary_anatomic_site,C0040132,Thyroid Gland
+C0029456,manifestation_of,C1850168,Bruck syndrome 1
+C0029456,may_be_prevented_by,C0975148,Calcium Carbonate 1000 MG Chewable Tablet
+C0029456,disease_has_associated_anatomic_site,C0262950,Skeletal bone
+,,,
+,,,
+,,,
+,,,
+C0024530,related_to,C1456578,Traveler's Health
+C0024530,may_be_prevented_by,C1177631,Doxycycline 75 MG Oral Tablet
+,,,
+,,,
+,,,
+C0024530,may_be_prevented_by,C1177631,Doxycycline 75 MG Oral Tablet
+C0024530,answer_to,C2706779,Public health notifiable condition:Presence or Identity:Point in time:To be specified in another part of the message:Nominal
+C0018790,component_of,C2925643,PhenX measure - sudden cardiac arrest:-:Point in time:^Patient:-:PhenX
+C0018790,manifestation_of,C3554047,VENTRICULAR TACHYCARDIA  CATECHOLAMINERGIC POLYMORPHIC  4
+C0018790,may_be_treated_by,C3486191,0.15 ML Epinephrine 1 MG/ML Prefilled Syringe [Auvi-Q]
+C0032285,may_be_treated_by,C0980385,Sucralfate 100 MG/ML Oral Suspension
+,,,
+C0015967,may_be_finding_of_disease,C0855628,Stage I Supradiaphragmatic Nodular Sclerosis Classical Hodgkin Lymphoma
+C0015967,manifestation_of,C2749604,HEMOLYTIC UREMIC SYNDROME  ATYPICAL  SUSCEPTIBILITY TO  1

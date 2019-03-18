@@ -1,34 +1,34 @@
-CUI,RELA,CUI2
-C0024530,may_be_prevented_by,C0688461
-C0024530,related_to,C0030499
-C0024530,related_to,C1456578
-C0024530,disease_has_associated_gene,C1706544
-C0024530,disease_has_associated_gene,C1334074
-C0018790,may_be_treated_by,C2701326
-C0018790,answer_to,C3260970
-C0018790,may_be_treated_by,C1962152
-C0032285,manifestation_of,C0221026
-C0032285,may_be_treated_by,C3700911
-C0032285,concept_in_subset,C3828488
-C0032285,answer_to,C1632372
-C0032285,disease_has_associated_anatomic_site,C0024109
-C0015967,manifestation_of,C2697310
-C0015967,induced_by,C0776544
-C0015967,may_be_treated_by,C0000970
-C0015967,may_be_treated_by,C0025152
-C0015967,may_be_treated_by,C2684300
-C0015967,manifestation_of,C3554540
-C0002871,may_be_treated_by,C0777393
-C0002871,manifestation_of,C1851970
-C0002871,related_to,C0042849
-C0002871,manifestation_of,C0549463
-C0021099,may_be_treated_by,C0724641
-C0021099,disease_has_primary_anatomic_site,C1123023
-C0021099,related_to,C0038395
-C0021099,manifestation_of,C1856245
-C0024530,may_be_prevented_by,C1639494
-C0024530,has_contraindicated_drug,C0690252
-C0024530,related_to,C0030499
-C0024530,may_be_prevented_by,C1177631
-C0024530,answer_to,C2706779
-C0024530,may_be_prevented_by,C1639494
+CUI,RELA,CUI2,STR2
+C0024530,may_be_prevented_by,C0688461,Dapsone 25 MG Oral Tablet
+C0024530,related_to,C0030499,Parasitic Diseases
+C0024530,related_to,C1456578,Traveler's Health
+C0024530,disease_has_associated_gene,C1706544,ICAM1 wt Allele
+C0024530,disease_has_associated_gene,C1334074,ICAM1 gene
+C0018790,may_be_treated_by,C2701326,Epinephrine 0.016 MG/ML Injectable Solution
+C0018790,answer_to,C3260970,Cardiac rhythm:Find:Pt:^Patient:Nom:NEMSIS
+C0018790,may_be_treated_by,C1962152,0.15 ML Epinephrine 1 MG/ML Prefilled Syringe
+C0032285,manifestation_of,C0221026,X-linked agammaglobulinemia
+C0032285,may_be_treated_by,C3700911,sucralfate malate 100 MG/ML Oral Paste
+C0032285,concept_in_subset,C3828488,Prenatal and Pediatric Terminology
+C0032285,answer_to,C1632372,Event description.adverse event:Find:Pt:^Patient:Nom:Observed.MERSTH
+C0032285,disease_has_associated_anatomic_site,C0024109,Lung
+C0015967,manifestation_of,C2697310,SARCOIDOSIS  SUSCEPTIBILITY TO  1 (finding)
+C0015967,induced_by,C0776544,PLAGUE VACCINE INJ
+C0015967,may_be_treated_by,C0000970,Acetaminophen
+C0015967,may_be_treated_by,C0025152,Mefenamic Acid
+C0015967,may_be_treated_by,C2684300,Ciprofloxacin 2 MG/ML Otic Solution
+C0015967,manifestation_of,C3554540,LYMPHOPROLIFERATIVE SYNDROME 2
+C0002871,may_be_treated_by,C0777393,Epoetin Alfa 10000 UNT/ML Injectable Solution
+C0002871,manifestation_of,C1851970,DYSKERATOSIS CONGENITA  AUTOSOMAL DOMINANT
+C0002871,related_to,C0042849,Vitamin B Complex
+C0002871,manifestation_of,C0549463,X-Linked Lymphoproliferative Disorder
+C0021099,may_be_treated_by,C0724641,MUPIROCIN CALCIUM
+C0021099,disease_has_primary_anatomic_site,C1123023,Skin
+C0021099,related_to,C0038395,Streptococcal Infections
+C0021099,manifestation_of,C1856245,Granulomatous Disease  Chronic  Autosomal Recessive  Cytochrome B-Positive  Type II
+C0024530,may_be_prevented_by,C1639494,Dapsone 0.05 MG/MG Topical Gel
+C0024530,has_contraindicated_drug,C0690252,Pyrimethamine 25 MG Oral Tablet
+C0024530,related_to,C0030499,Parasitic Diseases
+C0024530,may_be_prevented_by,C1177631,Doxycycline 75 MG Oral Tablet
+C0024530,answer_to,C2706779,Public health notifiable condition:Presence or Identity:Point in time:To be specified in another part of the message:Nominal
+C0024530,may_be_prevented_by,C1639494,Dapsone 0.05 MG/MG Topical Gel

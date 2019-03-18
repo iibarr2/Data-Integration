@@ -22,17 +22,19 @@ public class Relationships
 	String CUI2;
 	//String CUI;
 	String relation;
+	String STR2;
 	//String CUI2;
 	
 	/*
 	 * creates relationships array
 	 */
-	public Relationships(String CUI, String relation, String CUI2)
+	public Relationships(String CUI, String relation, String CUI2, String STR2)
 	{
 		super();
 		this.CUI = CUI;
 		this.relation = relation;
 		this.CUI2 = CUI2;
+		this.STR2 = STR2;
 	}
 	
 	/*
@@ -71,6 +73,8 @@ public class Relationships
 	public void setRelation(String relation) {
 		this.relation = relation;
 	}
+	
+	
 
 //	public String getCUI2() {
 //		return CUI2;
@@ -80,6 +84,14 @@ public class Relationships
 //		this.CUI2 = CUI2;
 //	}
 	
+	public String getSTR2() {
+		return STR2;
+	}
+
+	public void setSTR2(String sTR2) {
+		STR2 = sTR2;
+	}
+
 	public String toStringRel()
 	{
 		return String.format("\n%-6d%-13s%-18s",this.CUI,  this.relation,  this.CUI2);
