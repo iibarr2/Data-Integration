@@ -277,7 +277,10 @@ public class Display {
 	 * exported/saved find all the information from the repository with medical term
 	 * and export it with specific string() format user enters "T"
 	 */
+	
 		public void saveTerms(String relaStr, String fileName) {
+		
+			
 		String cuiCode = null;
 		
 		File newFile = new File(fileName);
@@ -306,6 +309,7 @@ public class Display {
 			sb.append("\n");
 			
 			
+			
 			/*
 			 * so from what i can tell, the dataIn array holds a cui code matching a 
 			 * term and a relationship and the str2data array holds the code and the second part of the relationship
@@ -332,8 +336,7 @@ public class Display {
 						
 						
 			       } catch (NullPointerException e) {
-			           //commented this out because it prints every time there isnt 
-			    	   //the code at that point in the array.
+			           //commented this out because it prints every time there isnt the code at that point in the array.
 			    	   // System.out.print("Caught the NullPointerException");
 			       }
 					
@@ -344,6 +347,7 @@ public class Display {
 			System.out.println("finished");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			//
 			e.printStackTrace();
 		}
 	}
